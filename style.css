@@ -26,10 +26,14 @@
   font-style: italic;
 }
 
+.header {
+  margin-top: 78px;
+}
+
 .header__content {
   max-width: 1400px;
   padding: 0 1.25rem;
-  margin: 78px auto 0 auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
@@ -133,6 +137,7 @@
 .main {
   max-width: 1800px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .bg-image-section {
@@ -182,19 +187,23 @@
   text-align: center;
   font-size: 18px;
 }
+
 .buttons-row__button {
   height: 56px;
 }
+
 .buttons-row__circle-button {
   height: 46px;
   width: 46px;
   background-color: #5f2966;
 }
+
 .button_style_purple {
   width: 246px;
   background: linear-gradient(to right, #646c93, #5f2e69);
   box-shadow: 0 3px 10px 1px #6f81bb;
 }
+
 .button_style_blue {
   width: 166px;
   background: linear-gradient(to right, #35bae0, #5e7bea);
@@ -231,68 +240,93 @@
 }
 
 .main__feat-container {
-  margin-bottom: 50px;
+  margin-bottom: 69px;
 }
 
 .features-section {
   display: grid;
-  grid-template-columns: minmax() 7.14fr 4.31fr 6.53fr minmax();
-  grid-template-rows: auto;
+  grid-template-columns: minmax(auto, 7.14fr) minmax(431px, 4.31fr) minmax(auto, 6.53fr);
+  grid-template-rows: minmax(234px, auto) minmax(234px, auto);
   justify-content: center;
   grid-template-areas:
-    ". art1 art2 art3 ."
-    ". art4 art4 btn .";
-}
-.feat-article {
-  box-sizing: border-box;
-  padding: 0 34px;
-}
-.feat-article_num_1 {
-  grid-area: art1;
-  max-width: 433px;
-  justify-self: right;
+    ". . ."
+    "art art .";
 }
 
-.feat-article_num_2 {
-  grid-area: art2;
-  max-width: 433px;
+
+.feat-article:nth-child(3n + 1) .feat-article__header,
+.feat-article:nth-child(3n + 1) .feat-article__description {
+  margin-left: auto;
+}
+.feat-article:nth-child(2) {
+  border-right: 1px solid black;
+  position: relative;
+}
+.feat-article:nth-child(2) .feat-article__header {
+  border-left: 1px solid black;
+} 
+.feat-article:nth-child(2)::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 200px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 894px;
+}
+.feat-article:nth-child(2)::before {
+  content: "";
+  height: 150px;
+  width: 1px;
+  background-color: black;
+  position: absolute;
+  top: -150px;
+  left: 0;
+  z-index: -1;
 }
 
-.feat-article_num_3 {
-  grid-area: art3;
-  max-width: 433px;
-}
-
-.feat-article_num_4 {
-  grid-area: art4;
-  justify-self: right;
-  align-self: end;
+.feat-article_size_l {
+  grid-area: art;
   text-align: right;
-  max-width: 705px;
+  position: relative;
   border: 1px solid black;
+  border-width: 0 1px 1px 0;
 }
 
 .features-section__button {
-  grid-area: btn;
-  align-self: end;
-  width: 334px;
-  height: 62px;
-  border-radius: 31px;
-  background: #ffffff;
-  border: 1px solid #b9b9b9;
+  font-family: 'Titillium Web';
   color: #676767;
   font-size: 16px;
-  position: relative;
-  transform: translate(50%, 50%)
+  background: #ffffff;
+  border: 1px solid #b9b9b9;
+  border-radius: 31px;
+  width: 334px;
+  height: 62px;
+  position: absolute;
+  bottom: -31px;
+  right: -164px;
+  outline: none;
+  cursor: pointer;
 }
-.feat-article__header{
+
+.feat-article__header {
+  max-width: 368px;
+  padding: 0 34px 26px;
 }
+
+.feat-article__header_size_l {
+  max-width: 625px;
+  padding: 0 34px;
+}
+
 .feat-article__icon {
   float: left;
-  /* left: 5px; */
   object-fit: none;
   height: 60px;
   width: 60px;
+  box-sizing: border-box;
+  padding-bottom: 10px;
 }
 
 .feat-article__title {
@@ -302,33 +336,45 @@
   font-size: 30px;
   font-weight: 400;
   margin: 0 0 0 10px;
+  line-height: 1;
 }
 
-.feat-article__title_fsize_l {
+.feat-article__title_size_l {
   font-size: 60px;
   color: #535353;
+  margin-top: 53px;
+  letter-spacing: 0.05rem;
 }
 
 .feat-article__subtitle {
+  display: inline-block;
   font-family: 'Titillium Web';
   color: #959393;
   font-size: 18px;
   font-weight: 400;
   line-height: 22px;
-  margin: 0 0 0 70px;
+  margin: 0 0 0 11px;
 }
 
 .feat-article__description {
   font-family: 'Titillium Web';
   color: #959393;
   font-size: 14px;
-  padding-left: 10px;
-  margin-top: 28px;
+  margin-top: 3px;
+  margin-bottom: 0;
   line-height: 1.55;
+  max-width: 368px;
+  padding: 0 34px 0 46px;
+  word-wrap: break-word;
 }
 
-.feat-article__description_fsize_l {
+.feat-article__description_size_l {
+  max-width: 635px;
   font-size: 24px;
+  line-height: 1;
+  margin-top: 15px;
+  padding: 0 37px;
+  letter-spacing: 0.025rem;
 }
 
 .feat-article__description_color_add {
@@ -336,7 +382,7 @@
 }
 
 .journal-section {
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 .journal-list {
