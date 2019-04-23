@@ -25,7 +25,22 @@
   font-weight: 400;
   font-style: italic;
 }
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url('./assets/fonts/fa-solid-900.woff2') format("woff2");
+}
 
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url("./assets/fonts/fa-brands-400.woff2") format("woff2")
+}
+/* \f2f6,\f179,\f3ab,\f382,\f155,\f155,\f2f6 */
 .header {
   max-width: 1800px;
   margin: 78px auto 0 auto;
@@ -127,12 +142,20 @@
 }
 
 .authorization__log-in {
+  position: relative;
   display: inline-block;
   font-family: 'Titillium Web';
   color: #454545;
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.authorization__log-in::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f2f6";
+  position: absolute;
+  left: -26px;
 }
 
 .main {
@@ -197,6 +220,8 @@
 }
 
 .buttons-row__circle-button {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f179";
   height: 46px;
   width: 46px;
   background-color: #5f2966;
