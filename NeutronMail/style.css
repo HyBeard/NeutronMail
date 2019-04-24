@@ -25,6 +25,7 @@
   font-weight: 400;
   font-style: italic;
 }
+
 @font-face {
   font-family: "Font Awesome 5 Free";
   font-style: normal;
@@ -40,6 +41,7 @@
   font-display: auto;
   src: url("./assets/fonts/fa-brands-400.woff2") format("woff2")
 }
+
 /* \f2f6,\f179,\f3ab,\f382,\f155,\f155,\f2f6 */
 .header {
   max-width: 1800px;
@@ -228,6 +230,18 @@
   margin-right: 20px;
 }
 
+.apple-btn::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f179";
+}
+
+.g-play-btn::before {
+  font-family: "Font Awesome 5 Brands";
+  content: "\f3ab";
+}
+
+
+
 .button_style_purple {
   width: 246px;
   background: linear-gradient(to right, #646c93, #5f2e69);
@@ -242,8 +256,8 @@
 
 .bg-image-section__social-container {
   position: absolute;
-  right: 2.1rem;
-  top: 11rem;
+  right: 33px;
+  top: 172px;
 }
 
 .social-list {
@@ -252,21 +266,30 @@
   margin: 0;
 }
 
-.social-list__item {
-  background: #454545;
-  border-radius: 4px;
-
+.social-list__item-link {
+  text-decoration: none;
 }
 
 .social-list__item:not(:last-child) {
-  margin-bottom: 17px;
+  margin-bottom: 12px;
 }
 
-.social-list__item-link {
-  display: block;
-  height: 20px;
-  width: 20px;
-  text-decoration: none;
+.social-list__item-link:before {
+  font-family: "Font Awesome 5 Brands";
+  font-size: 22px;
+  opacity: 0.82;
+  color: #454545;
+}
+
+.g-plus-link::before {
+  content: "\f0d4"
+}
+.facebook-link::before {
+  content: "\f082"
+}
+
+.twitter-link::before {
+  content: "\f081"
 }
 
 .main__feat-container {
@@ -283,6 +306,9 @@
     "art art .";
 }
 
+.feat-article:nth-child(3) {
+  padding: 0 0 5px 5px;
+}
 
 .feat-article:nth-child(3n + 1) .feat-article__header,
 .feat-article:nth-child(3n + 1) .feat-article__description {
@@ -290,12 +316,12 @@
 }
 
 .feat-article:nth-child(2) {
-  border-right: 1px solid black;
+  border-right: 1px solid #b9b9b9;
   position: relative;
 }
 
 .feat-article:nth-child(2) .feat-article__header {
-  border-left: 1px solid black;
+  border-left: 1px solid #b9b9b9;
 }
 
 .feat-article:nth-child(2)::after {
@@ -303,7 +329,7 @@
   display: block;
   height: 1px;
   width: 200px;
-  background-color: black;
+  background-color: #b9b9b9;
   position: absolute;
   top: 0;
   left: 894px;
@@ -313,7 +339,7 @@
   content: "";
   height: 150px;
   width: 1px;
-  background-color: black;
+  background-color: #b9b9b9;
   position: absolute;
   top: -150px;
   left: 0;
@@ -324,7 +350,7 @@
   grid-area: art;
   text-align: right;
   position: relative;
-  border: 1px solid black;
+  border: 1px solid #b9b9b9;
   border-width: 0 1px 1px 0;
 }
 
@@ -397,7 +423,7 @@
   font-size: 14px;
   margin-top: 3px;
   margin-bottom: 0;
-  line-height: 1.65;
+  line-height: 1.5;
   max-width: 368px;
   padding: 0 25px 0 46px;
   word-wrap: break-word;
@@ -418,6 +444,7 @@
 
 .journal-section {
   padding: 0 20px;
+  margin-bottom:-208px;
 }
 
 .journal-list {
@@ -510,6 +537,7 @@
 }
 
 .quote-box__text {
+  z-index: 2;
   display: inline-block;
   max-width: 525px;
   font-family: "Malaga";
@@ -530,27 +558,25 @@
   margin-top: 9px;
 }
 
-/* .bg-gradient {
-  position: relative;
+.bg-gradient {
   background: linear-gradient(10deg, #ffffff 58%, #eeeeee 100%);
-  padding-top: 50px;
-  margin-top: -50px;
-
 }
 
 .bg-gradient::before {
   content: '';
-  position: absolute;
-  top: -50px;
+  display: inline-block;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 215px 1800px 0 0;
-  border-color: #007bff transparent transparent transparent;
-} */
+  border-width: 204px 1800px 0 0;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+
 .download-section {
   padding: 0 30px;
 }
+
 .download-section__container {
   position: relative;
   max-width: 1100px;
@@ -560,7 +586,9 @@
   margin-left: auto;
   max-height: 525px;
 }
+
 .product-promotion {
+  z-index: 2;
   max-width: 437px;
   text-align: end;
 }
@@ -597,7 +625,7 @@
 
 .download-section__img {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   right: 240px;
   bottom: -17px;
 }
@@ -608,7 +636,7 @@
 
 .donate-section__container {
   position: relative;
-  border-top: 1px solid black;
+  border-top: 1px solid #b9b9b9;
   text-align: center;
   max-width: 1000px;
   margin: 0 auto;
@@ -623,7 +651,7 @@
   display: block;
   width: 500px;
   height: 1px;
-  background-color: black;
+  background-color: #b9b9b9;
 }
 
 .donate-call {
@@ -645,15 +673,47 @@
   font-weight: 400;
   margin: 0;
 }
+
 .donate-section__buttons-row {
   margin: 40px 0;
 }
 
+.upgrade-btn::before {
+  content: "\f382";
+  font-family: "Font Awesome 5 Free";
+  padding-right: 10px;
+  font-size: 16px;
+}
+.donate-btn::before {
+  content: "\f155";
+  font-family: "Font Awesome 5 Free";
+  padding-right: 10px;
+}
+
+.partners-section__wrapper {
+  padding: 0 calc(10% + 40px) 0 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 .partners-section__container {
-  border-top: 1px solid black;
-  max-width: 1400px;
+  position: relative;
+  border-top: 1px solid #b9b9b9;
   text-align: right;
-  padding: 15px 0;
+  padding: 15px 0 160px;
+
+}
+
+.partners-section__container::after,
+.footer-nav__block:first-child::after {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  right: 0;
+  height: 1000px;
+  width: 1px;
+  background-color: #b9b9b9;
 }
 
 .partners-section__text {
@@ -722,24 +782,31 @@
 }
 
 .footer {
-  padding: 145px 0 30px;
+  padding: 0 0 30px;
   max-width: 1800px;
   margin: 0 auto;
+  overflow: hidden;
 }
+
 .footer__wrapper {
-  padding: 0 220px 0 20px;
+  padding: 0 calc(10% + 40px) 0 20px;
   margin: 0 auto;
   max-width: 1200px;
 }
+
 .footer__container {
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
+  border: solid #b9b9b9;
+  border-width: 0 1px;
 }
+
 .footer-nav {
   display: flex;
   justify-content: space-between;
 }
+
 .contact-block {
   max-width: 220px;
 }
@@ -771,9 +838,12 @@
   text-align: right;
   padding: 0 6px 0 49px;
 }
+
 .footer-nav__block:first-child {
+  position: relative;
   padding: 0 26px;
 }
+
 
 .footer-nav__block-title {
   font-family: "Titillium Web";
@@ -801,10 +871,12 @@
 .footer__socials {
   margin-top: 59px;
 }
+
 .footer__socials .slash-selector__link {
   font-size: 12px;
   letter-spacing: 0.03em;
 }
+
 .footer__copyright {
   display: inline-block;
   font-family: "Titillium Web";
