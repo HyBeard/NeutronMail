@@ -575,10 +575,10 @@
 
 .download-section {
   padding: 0 30px;
+  position: relative;
 }
 
 .download-section__container {
-  position: relative;
   max-width: 1100px;
   display: flex;
   align-items: center;
@@ -626,7 +626,7 @@
 .download-section__img {
   position: absolute;
   z-index: 1;
-  right: 240px;
+  right: calc(25% - 180px);
   bottom: -17px;
 }
 
