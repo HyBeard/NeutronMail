@@ -887,7 +887,19 @@
   margin-top: 18px;
 }
 
-a:hover, button:hover {
+.header__logo-container:hover,
+.top-navigation__item-link:hover,
+.button:hover,
+.top-navigation__item:hover,
+.slash-selector__item:hover,
+.authorization__log-in:hover,
+.authorization__sign-up:hover,
+.social-list__item:hover,
+.features-section__button:hover,
+.journal-list__j:hover,
+.product-promotion__download-button:hover,
+.partners-list__p:hover,
+.footer-nav__block-link:hover {
   transform: scale(1.1);
 }
 
