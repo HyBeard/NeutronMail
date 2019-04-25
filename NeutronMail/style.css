@@ -54,6 +54,10 @@
   justify-content: space-between;
 }
 
+.header__logo-container {
+  margin: 0;
+}
+
 .logo {
   font-family: "Titillium Web";
   color: #858688;
@@ -160,7 +164,6 @@
   content: "/";
   margin-left: 12px;
 }
-
 
 .main {
   max-width: 1800px;
@@ -542,7 +545,6 @@
 }
 
 .quote-box__text {
-  z-index: 2;
   display: inline-block;
   max-width: 525px;
   font-family: "Malaga";
@@ -576,7 +578,6 @@
   border-width: 204px 1800px 0 0;
   border-color: #ffffff transparent transparent transparent;
 }
-
 
 .download-section {
   padding: 0 30px;
@@ -677,7 +678,6 @@
   margin: 2px 0 0;
 }
 
-
 .upgrade-btn::before {
   content: "\f382";
   font-family: "Font Awesome 5 Free";
@@ -702,7 +702,6 @@
   border-top: 1px solid #b9b9b9;
   text-align: right;
   padding: 15px 0 160px;
-
 }
 
 .partners-section__container::after,
@@ -886,6 +885,10 @@
   letter-spacing: 0.12px;
   padding-left: 3px;
   margin-top: 18px;
+}
+
+a:hover, button:hover {
+  transform: scale(1.1);
 }
 
 
